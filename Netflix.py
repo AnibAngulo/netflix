@@ -6,16 +6,16 @@ sidebar = st.sidebar
 
 DATA_URL = 'movies.csv'
 
-st.header("Dataset")
+st.header("Tabla de Peliculas")
 @st.cache
 def load_data():
     data = pd.read_csv(DATA_URL)
     return data
 data = load_data()
-
-agree = sidebar.checkbox("Quieres ver la base de datos ? ")
+agree = sidebar.checkbox("Quieres ver la tabla de peliculas")
 if agree:
     st.dataframe(data)
+
 
 @st.cache
 def load_data_byname(name):
